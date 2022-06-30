@@ -4,7 +4,8 @@
 /**
  * main - entry point
  *
- * Description: this program prints sizes of various types on the computer it   * is compiled and run on.
+ * Description: this program prints sizes of various types on the computer
+ * it is compiled and run on.
  * Return: returns zero always
  */
 int main(void)
