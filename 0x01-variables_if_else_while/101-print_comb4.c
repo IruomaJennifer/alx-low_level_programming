@@ -13,15 +13,12 @@ int main(void)
 	int k;
 	int tcnt;
 
-	i = 48;
-	j = 49;
-	k = 50;
 	tcnt = 0;
-	while (i < 58)
+	for (i = 48; i < 58; i++)
 	{
-		while (j < 58)
+		for (j = 49; j < 58; j++)
 		{
-			while (k < 58)
+			for (k = 50; k < 58; k++)
 			{
 				if (k > j && j > i)
 				{
@@ -29,17 +26,14 @@ int main(void)
 				putchar(j);
 				putchar(k);
 				tcnt++;
-				}
 				if (tcnt != 120)
 				{
-				putchar(44);
-				putchar(32);
+					putchar(44);
+					putchar(32);
 				}
-				k++;
+				}
 			}
-			j++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
