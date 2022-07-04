@@ -3,8 +3,8 @@
 /**
  * main - entry point
  *
- * Description - prints all possible combinations of two two-digit numbers
- * Return - zero always
+ * Description: prints all possible combinations of two two-digit numbers
+ * Return: zero always
  */
 int main(void)
 {
