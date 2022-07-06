@@ -6,22 +6,22 @@
  */
 int main(void)
 {
-	int n = 1;
+	unsigned long int n;
 	unsigned long int prev = 1;
 	unsigned long int tr = 1000000000;
 	unsigned long int next = 2, prev1, prev2, next1, next2;
 
 	printf("%lu", prev);
-	for (n = 0; n <= 91; n++)
+	for (n = 1; n <= 91; n++)
 	{
 		printf(", %lu", next);
 		next += prev;
 		prev = next - prev;
 	}
-	prev1 = prev / tr;
-	prev2 = prev % tr;
-	next1 = next / tr;
-	next2 = next % tr;
+	prev1 = (prev / tr);
+	prev2 = (prev % tr);
+	next1 = (next / tr);
+	next2 = (next % tr);
 	for (n = 92; n < 99; ++n)
 	{
 		printf(", %lu", next1 + (next2 / tr));
