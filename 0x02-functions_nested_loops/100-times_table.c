@@ -2,18 +2,15 @@
 
 /**
  * print_times_table - prints the n times table
+ * @n: an integer
  * Return: nothing
  */
 void print_times_table(int n)
 {
-	int i;
-	int j;
-	int prod;
-	
+	int i, j, prod;
+
 	if (n > 15 || n < 0)
-		_putchar('\0');
-	else
-	{
+		return;
 	for (i = 0; i < n + 1; i++)
 	{
 		for (j = 0; j < n + 1; j++)
@@ -47,7 +44,6 @@ void print_times_table(int n)
 			}
 		}
 		_putchar('\n');
-	}
 	}
 }
 
