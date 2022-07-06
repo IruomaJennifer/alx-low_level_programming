@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- * method - entry point
+ * main - entry point
  * Return: nothing
  */
-void method(void)
+int main(void)
 {
 	int sum = 0, i;
 
@@ -16,5 +16,6 @@ void method(void)
 			sum = sum + i;
 	}
 	printf("%d\n", sum);
+	return (0);
 }
 
