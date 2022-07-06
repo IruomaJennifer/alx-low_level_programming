@@ -7,20 +7,20 @@
 int main(void)
 {
 	int n = 1;
-	int prev = 0;
-	int present = 1;
-	int next;
+	long int prev = 0;
+	long int present = 1;
+	long int next;
 
 	while (n <= 50)
 	{
-		next = present + prev;
+		next = prev + present;
 		if ( n != 50)
 		{
-			printf("%d, ", next);
+			printf("%lu, ", next);
 		}
 		else
 		{
-			printf("%d", next);
+			printf("%lu", next);
 		}
 		prev = present;
 		present = next;
