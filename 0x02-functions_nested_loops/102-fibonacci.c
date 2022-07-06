@@ -14,7 +14,7 @@ int main(void)
 	while (n <= 50)
 	{
 		next = prev + present;
-		if ( n != 50)
+		if (n != 50)
 		{
 			printf("%lu, ", next);
 		}
