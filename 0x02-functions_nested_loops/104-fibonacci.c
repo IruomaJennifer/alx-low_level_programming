@@ -1,37 +1,43 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- * Return: 0 always
+ * main - block to be executed
+ * Description: computes
+ * Return: 0
  */
 int main(void)
 {
-	unsigned long int n;
-	unsigned long int prev = 1;
-	unsigned long int tr = 1000000000;
-	unsigned long int next = 2, prev1, prev2, next1, next2;
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	printf("%lu", prev);
-	for (n = 1; n <= 91; n++)
-	{
-		printf(", %lu", next);
-		next += prev;
-		prev = next - prev;
-	}
-	prev1 = (prev / tr);
-	prev2 = (prev % tr);
-	next1 = (next / tr);
-	next2 = (next % tr);
-	for (n = 92; n < 99; ++n)
-	{
-		printf(", %lu", next1 + (next2 / tr));
-		printf("%lu", next2 % tr);
-		next1 = next1 + prev1;
-		prev1 = next1 - prev1;
-		next2 = next2 + prev2;
-		prev2 = next2 - prev2;
-	}
+	printf("%lu", bef);
 
+	for (i = 1; i < 91; i++)
+	{
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
+	}
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
+
+	for (i = 92; i < 99; ++i)
+	{
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
+	}
 	printf("\n");
 	return (0);
 }
