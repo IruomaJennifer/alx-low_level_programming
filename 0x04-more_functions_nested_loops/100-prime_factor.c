@@ -2,7 +2,7 @@
 
 /**
  * main - entry
- * Returns: void
+ * Return: void
  */
 
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
 	long int num = 612852475143;
 	long int fact = 3;
 
-	while(fact < num)
+	while (fact < num)
 	{
 		if (num % fact == 0)
 		{
