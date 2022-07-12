@@ -25,7 +25,7 @@ void puts2(char *str)
 	int len = _strlen(str);
 	int cnt = 0;
 
-	while (cnt <= len)
+	while (cnt < len)
 	{
 		if (*str == '\0')
 		{
