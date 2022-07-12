@@ -17,7 +17,7 @@ void puts2(char *str)
 		}
 		if (cnt % 2 == 0)
 		_putchar(*str);
-		str ++;
+		str++;
 		cnt++;
 	}
 }
