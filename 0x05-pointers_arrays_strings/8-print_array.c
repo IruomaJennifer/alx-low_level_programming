@@ -10,6 +10,10 @@ void print_array(int *a, int n)
 {
 	int i;
 
+	if (n <= 0)
+	{
+		return;
+	}
 	printf("%d", *a);
 	for (i = 1; i < n; i++)
 	{
