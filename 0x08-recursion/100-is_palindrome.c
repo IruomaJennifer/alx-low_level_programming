@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * _strlen - to get the length of a string
  * @s: a pointer to a character
@@ -8,32 +7,41 @@ int _strlen(char *s)
 {
 	int len = 0;
 
-	while (*s != '\0')
+	if (*s == '\0')
+		return (0);
+	if (*s != '\0')
 	{
 		len++;
-		s++;
 	}
-	return (len);
+	return (len + _strlen(s + 1));
 }
 /**
- * is_palindrome - to check if a string is a palindrome
+ * check_is_palindrome - to check if a string is a palindrome
  * @s: pointer to a string
+ * @len: length of the string
  *
  * Return: integer
  */
-int is_palindrome(char *s)
+int check_is_palindrome(char *s, int len)
 {
-	char *p = s;
-	int len = _strlen(p);
 
-	if(len == 0 || len == 1)
+	if (len == 0 || len == 1)
 		return (1);
-	if(*p == *(p + (len - 1)))
+	if (s[0] == s[len - 1])
 	{
-		*(p + (len - 1)) = '\0';
-		p++;
-		is_palindrome(p);
+		return (check_is_palindrome(s + 1, len - 2));
 	}
 	return (0);
+}
+/**
+ * is_palindrome - calls check_is_palindrome
+ * @s: pointer to a string
+ * Return: int
+ */
+int is_palindrome(char *s)
+{
+	if (*s == '\0')
+		return (1);
+	return (check_is_palindrome(s, _strlen(s)));
 }
 
