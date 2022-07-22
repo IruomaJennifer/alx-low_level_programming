@@ -1,6 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * cnv_str - function to convert strings to int
+ * @c: a pointer to a string
+ *
+ * Return: an int
+ */
+int cnv_str(char *c)
+{
+	int no = 0;
+
+	while (*c != '\0')
+	{
+		if (*c >= '0' && *c <= '9')
+		{
+			no = (10 * no) + (*c - '0');
+		}
+		else
+		{
+			return (0);
+		}
+		c++;
+	}
+	return (no);
+}
+
+/**
  * main - adds positive numbers
  * @argc: an int
  * @argv: an array of strings
@@ -15,14 +40,13 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (**(argv + i) == '0')
-				sum += 0;
-			else if (atoi(argv[i]) <= 0)
+			if (cnv_str(*(argv + i)) == 0)
 			{
 				printf("Error\n");
 				return (1);
 			}
-			sum += atoi(argv[i]);
+			sum += cnv_str(*(argv + i));
+
 		}
 		printf("%d\n", sum);
 	}
