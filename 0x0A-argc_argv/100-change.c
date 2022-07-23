@@ -15,12 +15,17 @@ int main(int argc, char *argv[])
 	unsigned int values[] = {25, 10, 5, 2, 1};
 	unsigned int no_coins = 0, amt, remainder;
 
+	if (argc > 2 || argc == 1)
+	{
+		printf("Error\n");
+		return (1);
+	}
 	if (atoi(*(argv + 1)) < 0)
 	{
 		printf("%d\n", 0);
 		return (0);
 	}
-	else if (argc == 2)
+	if (argc == 2)
 	{
 		amt = atoi(*(argv + 1));
 		for (i = 0; i < 5; i++)
@@ -39,10 +44,6 @@ int main(int argc, char *argv[])
 		printf("%d\n", no_coins);
 		return (0);
 	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
+	return (0);
 }
 
