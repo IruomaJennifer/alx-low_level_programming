@@ -29,9 +29,9 @@ char *str_concat(char *s1, char *s2)
 	char *newstr;
 
 	if (s1 == NULL)
-		*s1 = '\0';
+		s1 = "";
 	if (s2 == NULL)
-		*s2 = '\0';
+		s2 = "";
 	lens1 = _strlen(s1);
 	lens2 = _strlen(s2);
 	newstr = malloc((lens1 + lens2 + 1) * sizeof(char));
