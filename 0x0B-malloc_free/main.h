@@ -6,5 +6,6 @@ char *_strdup(char *);
 char *str_concat(char *, char *);
 int **alloc_grid(int, int);
 int free_grid(int **grid, int height);
+char *argstostr(int, char **);
 
 #endif
