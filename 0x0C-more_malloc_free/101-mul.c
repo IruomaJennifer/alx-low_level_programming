@@ -57,9 +57,9 @@ void initialize(int *keep, int size)
 /**
  * multiply - multiplies two positive numbers
  * @args: a char pointer to pointer or an array of pointers
- * Return: nothing
+ * Return: int
  */
-void multiply(char **args)
+int multiply(char **args)
 {
 	char *s1 = *(args + 1);
 	char *s2 = *(args + 2);
@@ -68,6 +68,8 @@ void multiply(char **args)
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	keep = malloc(sizeof(int) * (len1 + len2));
+	if (keep == 0)
+		return (1);
 	initialize(keep, len1 + len2);
 	for (i = len1 - 1; i >= 0; i--)
 	{
@@ -85,6 +87,7 @@ void multiply(char **args)
 	}
 	printproduct(keep, len1 + len2);
 	free(keep);
+	return (0);
 }
 
 /**
@@ -126,6 +129,7 @@ void printproduct(int *keep, int size)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
+	int i;
 
 	if (argc < 3)
 	{
@@ -140,7 +144,7 @@ int main(int argc, char *argv[])
 		printerr();
 		exit(98);
 	}
-	multiply(argv);
-	return (0);
+	i = multiply(argv);
+	return (i);
 }
 
