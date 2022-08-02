@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * strlen - to get the length of a string
+ * _strlen - to get the length of a string
  * @s: a pointer to a character
  * Return: an int
  */
@@ -40,7 +40,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	newdog->name = malloc(len1);
 	newdog->owner = malloc(len2);
 
-	if (newdog->name == NULL || newdog->owner == NULL)
+	if (!(newdog->name) || !(newdog->owner))
 	{
 		free(newdog->name);
 		free(newdog->owner);
@@ -52,11 +52,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		newdog->name[i] = name[i];
 	newdog->name[i] = '\0';
 
+	newdog->age = age;
+
 	for (i = 0; i < len2; i++)
 		newdog->owner[i] = owner[i];
 	newdog->owner[i] = '\0';
 
-	newdog->age = age;
 
 	return (newdog);
 }
