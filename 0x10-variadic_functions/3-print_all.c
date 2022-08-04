@@ -56,10 +56,10 @@ void print_all(const char * const format, ...)
 	int i = 0, flag = 0;
 
 	va_start(arg, format);
-	if (format[i])
+	if (format[i] && format)
 		char_checkprint(*format, arg, &flag);
 	i = 1;
-	while (format[i])
+	while (format[i] && format)
 	{
 		while (flag)
 		{
