@@ -42,7 +42,7 @@ void print_all(const char * const format, ...)
 			flag = 0;
 	}
 	i = 1;
-	while (*(format + i) != '\0' && format)
+	while (format[i] && format)
 	{
 		while (flag)
 		{
