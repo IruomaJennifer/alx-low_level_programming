@@ -40,8 +40,11 @@ void print_all(const char * const format, ...)
 	i = 1;
 	while (*(format + i) != '\0')
 	{
-		if (flag)
+		while (flag)
+		{
 			printf(", ");
+			break;
+		}
 		switch (*(format + i))
 		{
 			case 's':
@@ -69,5 +72,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
+	va_end(arg);
 	printf("\n");
 }
