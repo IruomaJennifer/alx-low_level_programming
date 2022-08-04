@@ -20,9 +20,11 @@ void print_all(const char * const format, ...)
 			flag = 1;
 			s = va_arg(arg, char *);
 			if (s == NULL)
+			{
 				printf("(nil)");
-			else
-				printf("%s", s);
+				break;
+			}
+			printf("%s", s);
 			break;
 		case 'i':
 			flag = 1;
@@ -36,6 +38,8 @@ void print_all(const char * const format, ...)
 			flag = 1;
 			printf("%c", va_arg(arg, int));
 			break;
+		default:
+			flag = 0;
 	}
 	i = 1;
 	while (*(format + i) != '\0')
@@ -51,9 +55,11 @@ void print_all(const char * const format, ...)
 				flag = 1;
 				s = va_arg(arg, char *);
 				if (s == NULL)
+				{
 					printf("(nil)");
-				else
-					printf("%s", s);
+					break;
+				}
+				printf("%s", s);
 				break;
 			case 'i':
 				flag = 1;
