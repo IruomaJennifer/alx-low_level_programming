@@ -10,7 +10,7 @@
  * Return: void
  */
 
-void char_checkprint(char format, va_list arg, int *flag)
+void char_checkprint(char format, va_list arg, unsigned int *flag)
 {
 	char *s;
 
@@ -53,7 +53,7 @@ void char_checkprint(char format, va_list arg, int *flag)
 void print_all(const char * const format, ...)
 {
 	va_list arg;
-	int i = 0, flag = 0;
+	unsigned int i = 0, flag = 0;
 
 	va_start(arg, format);
 	if (format[i] && format)
