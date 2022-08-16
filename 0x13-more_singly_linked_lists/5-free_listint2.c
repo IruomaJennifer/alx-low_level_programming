@@ -10,8 +10,9 @@ void free_listint2(listint_t **head)
 {
 	listint_t *current = *head, *prev;
 
-	if (head == (void *)0)
+	if (!head)
 		return;
+
 	while (current != NULL)
 	{
 		prev = current;
