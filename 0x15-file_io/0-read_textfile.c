@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * read_textfile - function to read and print the contents of a text file
@@ -10,8 +10,9 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, w = 1, i = 0;
-	ssize_t printed = 0;
+	int fd;
+	ssize_t w = 1;
+	size_t printed = 0;
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * letters);
